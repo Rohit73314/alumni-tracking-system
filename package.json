@@ -41,7 +41,7 @@
     "build": "tsc -b && vite build",
     "check": "tsc && vite build && wrangler deploy --dry-run",
     "lint": "eslint .",
-    "postbuild": "cp dist/index.html dist/404.html",
+    "postbuild": "copy dist\\index.html dist\\404.html",
     "cf-typegen": "wrangler types",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
