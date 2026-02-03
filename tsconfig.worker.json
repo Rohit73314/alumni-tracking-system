@@ -2,14 +2,18 @@
   "extends": "./tsconfig.node.json",
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.worker.tsbuildinfo",
-    "types": ["vite/client", "./worker-configuration.d.ts"],
-    "baseUrl": ".",
+
+    // Removed: baseUrl (deprecated)
+    // Removed: invalid ignoreDeprecations
+    // Removed: non-existing worker-configuration.d.ts
+
     "paths": {
       "@/*": ["./src/*"]
     },
 
-    // Add this line to silence baseUrl deprecation
-    "ignoreDeprecations": "6.0"
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "WebWorker"],
+    "types": ["vite/client"]          // only this one
   },
   "include": ["src/worker"]
 }
