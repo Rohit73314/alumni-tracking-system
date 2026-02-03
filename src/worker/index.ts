@@ -1,5 +1,10 @@
-import { Hono } from "hono";
+// src/worker/index.ts
+import { Hono } from 'hono'
 
-const app = new Hono<{ Bindings: Env }>();
+const app = new Hono()
 
-export default app;
+app.get('/', (c) => {
+  return c.text('Hello from Hono on Cloudflare Workers!')
+})
+
+export default app

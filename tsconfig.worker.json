@@ -1,19 +1,24 @@
 {
   "extends": "./tsconfig.node.json",
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.worker.tsbuildinfo",
+    "target": "ES2022",
+    "lib": ["ES2022", "WebWorker"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "strict": true,
 
-    // Removed: baseUrl (deprecated)
-    // Removed: invalid ignoreDeprecations
-    // Removed: non-existing worker-configuration.d.ts
+    "types": [
+      "@cloudflare/workers-types",   // ← fixes most wrangler type resolution issues
+      "vite/client"
+    ],
 
     "paths": {
       "@/*": ["./src/*"]
-    },
-
-    "moduleResolution": "bundler",
-    "lib": ["ES2022", "WebWorker"],
-    "types": ["vite/client"]          // only this one
+    }
   },
-  "include": ["src/worker"]
+  "include": [
+    "src/worker"
+  ]
 }
