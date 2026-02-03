@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.node.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.worker.tsbuildinfo",
+    "types": ["vite/client", "./worker-configuration.d.ts"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+
+    // Add this line to silence baseUrl deprecation
+    "ignoreDeprecations": "6.0"
+  },
+  "include": ["src/worker"]
+}
