@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/rohit73314/Alimni-Tracking-System.git",
+  "homepage": "https://github.com/rohit73314/alumni-tracking-system.git",
   "dependencies": {
     "@hono/zod-validator": "^0.5.0",
     "hono": "^4.11.7",
@@ -36,14 +36,14 @@
     "vite": "^6.0.0",
     "wrangler": "^4.33.0"
   },
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "check": "tsc && vite build && wrangler deploy --dry-run",
-    "lint": "eslint .",
-    "postbuild": "copy dist\\index.html dist\\404.html",
-    "cf-typegen": "wrangler types",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
-  }
+ "scripts": {
+  "dev": "vite",
+  "build": "tsc -b && vite build",
+  "check": "tsc && vite build && wrangler deploy --dry-run",
+  "lint": "eslint .",
+  "postbuild": "copy \"dist\\client\\index.html\" \"dist\\404.html\"",
+  "cf-typegen": "wrangler types",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
+}
 }

@@ -10,8 +10,8 @@ import Admin from "@/react-app/pages/Admin.jsx";
 
 export default function App() {
   return (
-    <Router>
-      <Routes>
+    <Router basename="/alumni-tracking-system">
+      <Routes >
         <Route path="/" element={<AlumniDirectory />} />
         <Route path="/events" element={<Events />} />
         <Route path="/network" element={<Network />} />
